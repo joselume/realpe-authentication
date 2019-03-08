@@ -1,15 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.realpe.authentication</groupId>
+  <groupId>com.github.joselume</groupId>
   <artifactId>authentication-app</artifactId>
-  <version>1</version>
-  <parent>
-	<groupId>com.realpe.authentication</groupId>
-  	<artifactId>authentication-module</artifactId>
-  	<version>1</version>  
-  </parent>   
+  <version>1</version>    
   
-   <name>realpeAuthentication</name>
+   <name>realpeAppAuthentication</name>
   <description>realpe authentication</description>
   <url>http://github.com/joselume</url>
   <licenses>
@@ -32,6 +27,17 @@
 	  <developerConnection>scm:git:ssh://github.com/joselume/realpe-authentication.git</developerConnection>
 	  <url>http://github.com/joselume/realpe-authentication/tree/master</url>
   </scm>
+  
+	<distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  </repository>
+	</distributionManagement>  
   
 	<build>
 	  <plugins>
@@ -76,6 +82,19 @@
 	        </execution>
 	      </executions>
 	    </plugin>    
+	    
+		<plugin>
+		    <groupId>org.sonatype.plugins</groupId>
+		    <artifactId>nexus-staging-maven-plugin</artifactId>
+		    <version>1.6.7</version>
+		    <extensions>true</extensions>
+		    <configuration>
+		    <serverId>ossrh</serverId>
+		    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+		    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+		    </configuration>
+		</plugin>
+			    
 	  </plugins>
 	</build>
   
