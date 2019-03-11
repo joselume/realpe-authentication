@@ -1,13 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">  
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.realpe.authentication</groupId>
+  <groupId>com.github.joselume</groupId>
   <artifactId>authentication-module</artifactId>
-  <version>1</version>  
-  <packaging>pom</packaging> 
-  
+  <version>1</version>      
   <name>realpeParentPom</name>
   <description>The parent pom for all realpe projects</description>
   <url>http://github.com/joselume</url>
+  
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -27,7 +26,27 @@
 	  <connection>scm:git:git://github.com/joselume/realpe-authentication.git</connection>
 	  <developerConnection>scm:git:ssh://github.com/joselume/realpe-authentication.git</developerConnection>
 	  <url>http://github.com/joselume/realpe-authentication/tree/master</url>
-  </scm>     
+  </scm>  
+  
+	<distributionManagement>
+	  <snapshotRepository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+	  </snapshotRepository>
+	  <repository>
+	    <id>ossrh</id>
+	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  </repository>
+	</distributionManagement>
+	
+	<dependencies>
+	  	<dependency>
+	  	  <groupId>com.github.joselume</groupId>
+  			<artifactId>authentication-app</artifactId>
+  			<version>1</version>
+	  	</dependency>
+	  </dependencies>		
+
 	<build>
 	  <plugins>
 	    <plugin>
@@ -60,19 +79,30 @@
 		<plugin>
 	      <groupId>org.apache.maven.plugins</groupId>
 	      <artifactId>maven-gpg-plugin</artifactId>
-	      <version>1.5</version>
+	      <version>1.6</version>
 	      <executions>
 	        <execution>
 	          <id>sign-artifacts</id>
-	          <phase>verify</phase>
+	          <phase>deploy</phase>
 	          <goals>
 	            <goal>sign</goal>
 	          </goals>
 	        </execution>
 	      </executions>
-	    </plugin>    
-	  </plugins>
-	</build>
-
-  
+	    </plugin>
+ 
+		<plugin>
+		    <groupId>org.sonatype.plugins</groupId>
+		    <artifactId>nexus-staging-maven-plugin</artifactId>
+		    <version>1.6.7</version>
+		    <extensions>true</extensions>
+		    <configuration>
+		    <serverId>ossrh</serverId>
+		    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+		    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+		    </configuration>
+		</plugin>
+    
+	  </plugins>	  	   
+	</build>  
 </project>

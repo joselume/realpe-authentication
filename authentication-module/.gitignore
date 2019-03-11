@@ -1,0 +1,8 @@
+target/
+.settings/
+.classpath
+.project
+.gwt/
+log/
+.settings
+mykey.asc
