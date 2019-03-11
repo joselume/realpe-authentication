@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {                                
-                sh 'make' 
+                sh '/home/jmesa/eclipse-workspace/realpe-authentication/make' 
                 archiveArtifacts artifacts: '/home/jmesa/eclipse-workspace/realpe-authentication/**/target/*.jar', fingerprint: true                               
             }
         }
