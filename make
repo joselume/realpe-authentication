@@ -1,5 +1,5 @@
 cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-module
-mvn clean compile
+mvn clean install
 cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-app
-mvn clean compile
-cd ..
+mvn clean instal
+pwd
