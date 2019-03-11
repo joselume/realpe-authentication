@@ -1,5 +1,5 @@
-cd authentication-module
+cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-module
 mvn clean compile
-cd ..\authentication-app
+cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-app
 mvn clean compile
 cd ..
