@@ -8,7 +8,10 @@ pipeline {
             }
         }
         stage('Build2') {
-            archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true                               
+            steps {
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true                               
+            }
+            
         }
     }
 }
