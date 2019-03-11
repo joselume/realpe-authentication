@@ -1,5 +1,5 @@
 cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-module
-mvn clean install
+mvn clean package
 cd /home/jmesa/eclipse-workspace/realpe-authentication/authentication-app
-mvn clean instal
+mvn clean package
 pwd
