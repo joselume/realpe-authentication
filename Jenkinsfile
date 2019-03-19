@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            step {
+            steps {
                 retry(10) {                                                                
                     sh 'pwd'
                     sh 'ls'
