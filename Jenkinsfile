@@ -3,15 +3,17 @@ pipeline {
 
     stages {
         stage('Build') {
-            retry(10) {                                                                
-                sh 'pwd'
-                sh 'ls'
-                // sh 'cd authentication-module/; mvn clean package'
-                // Delete the next line and stay with the previous one
-                sh 'cd ; mvn clean package'
-                
-                sh 'cd authentication-app/; mvn clean package'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+            step {
+                retry(10) {                                                                
+                    sh 'pwd'
+                    sh 'ls'
+                    // sh 'cd authentication-module/; mvn clean package'
+                    // Delete the next line and stay with the previous one
+                    sh 'cd ; mvn clean package'
+
+                    sh 'cd authentication-app/; mvn clean package'
+                    archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                }
             }
             post {                
                 always {
