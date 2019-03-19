@@ -7,7 +7,8 @@ pipeline {
                 retry(10) {                                                                
                     sh 'pwd'
                     sh 'ls'
-                    sh 'cd authentication-module/; mvn clean package'                    
+                    // sh 'cd authentication-module/; mvn clean package'                    
+                    sh 'mvn clean package'                    
                     sh 'cd authentication-app/; mvn clean package'
                     archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                 }
