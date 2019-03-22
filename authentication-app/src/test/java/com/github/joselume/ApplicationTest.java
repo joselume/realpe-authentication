@@ -9,7 +9,7 @@ public class ApplicationTest {
 	 
 	private Application myApplication = new Application();
 	
-	@Test
+	@Test	
 	public void whenOpenApplicationReturnOpeningMessage() {
 		// act
 		String response = myApplication.open();

@@ -38,6 +38,15 @@
 	    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 	  </repository>
 	</distributionManagement>  
+	
+	<dependencies>
+	  	<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.10</version>
+		    <scope>test</scope>
+	  	</dependency>
+	</dependencies>		
   
 	<build>
 	  <plugins>
