@@ -14,7 +14,7 @@ public class ApplicationTest {
 		// act
 		String response = myApplication.open();
 		// assert
-		assertTrue(response.length() > 0);
+		assertTrue(response.length() == 0);
 	}
 	@Test
 	public void whenCloseApplicationReturnClosingMessage() {
