@@ -27,7 +27,7 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-            //junit 'build/reports/**/*.xml'
+            junit '**/*.xml'
             archiveArtifacts artifacts: '**/*.jar', fingerprint: true
         }
         failure {
