@@ -24,10 +24,10 @@ pipeline {
     post {                
         always {
             echo 'This will always run'
+            junit '**/*.xml'
         }
         success {
-            echo 'This will run only if successful'
-            junit '**/*.xml'
+            echo 'This will run only if successful'            
             archiveArtifacts artifacts: '**/*.jar', fingerprint: true
         }
         failure {
