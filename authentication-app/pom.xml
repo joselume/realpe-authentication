@@ -46,7 +46,6 @@
 		<commons.beanutils.version>1.9.3</commons.beanutils.version>		
 	</properties>	
 	
-<!--	
 	<dependencies>
 
 		<dependency>
@@ -105,7 +104,7 @@
 			<version>${commons.beanutils.version}</version>
 		</dependency>		
 	</dependencies>	
- -->
+ 
   
 	<build>
 	  <plugins>
