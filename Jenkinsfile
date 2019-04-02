@@ -25,7 +25,7 @@ pipeline {
         always {
             echo 'This will always run'
             junit '**/*.xml'            
-            archive (includes: '**/target/*.html')
+            archive (includes: '**/target/dependency-check-report.html')
         }
         success {
             echo 'This will run only if successful.'            
