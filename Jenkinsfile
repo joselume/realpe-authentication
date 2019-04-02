@@ -13,8 +13,8 @@ pipeline {
                 retry(10) {                                                                
                     sh 'pwd'
                     sh 'ls'
-                    sh 'cd authentication-module/; mvn clean package'                                        
-                    sh 'cd authentication-app/; mvn clean package'
+                    sh 'cd authentication-module/; mvn clean compile package install'                                        
+                    sh 'cd authentication-app/; mvn clean compile package install'
                     archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                 }
             }
