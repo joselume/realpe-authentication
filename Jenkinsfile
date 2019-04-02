@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                retry(10) {                                                                
+                retry(1) {                                                                
                     sh 'pwd'
                     sh 'ls'
                     sh 'cd authentication-module/; mvn clean compile package install'                                        
