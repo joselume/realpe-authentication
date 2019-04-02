@@ -24,8 +24,8 @@ pipeline {
     post {                
         always {
             echo 'This will always run'
-            junit '**/*.xml'            
-            archive (includes: '**/target/dependency-check-report.html')
+            junit '**/*.xml'        
+            archiveArtifacts artifacts: 'target/dependency-check-report.html'            
         }
         success {
             echo 'This will run only if successful.'            
