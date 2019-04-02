@@ -25,7 +25,7 @@ pipeline {
         always {
             echo 'This will always run'
             junit '**/*.xml'        
-            archiveArtifacts artifacts: 'target/dependency-check-report.html'            
+            archiveArtifacts artifacts: 'authentication-app/target/dependency-check-report.html'            
         }
         success {
             echo 'This will run only if successful.'            
