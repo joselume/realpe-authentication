@@ -46,15 +46,15 @@
 		<commons.beanutils.version>1.9.3</commons.beanutils.version>		
 	</properties>	
 	
-	
+<!--	
 	<dependencies>
-<!--
+
 		<dependency>
 		    <groupId>org.springframework.integration</groupId>
 		    <artifactId>spring-integration-zip</artifactId>
 		    <version>1.0</version>
 		</dependency>
--->
+
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
@@ -104,7 +104,8 @@
 			<artifactId>commons-beanutils</artifactId>
 			<version>${commons.beanutils.version}</version>
 		</dependency>		
-	</dependencies>		
+	</dependencies>	
+ -->
   
 	<build>
 	  <plugins>
